@@ -1,6 +1,8 @@
+import os
 import streamlit as st
+import requests
 
-# Title for the Latest Version Hello T
+# Title for the Streamlit app
 st.title("Service Options")
 
 # Checkbox options
@@ -14,7 +16,7 @@ if outreach:
 
     # Embed Google Places Autocomplete using HTML iframe with error checking and logging
     html_code = """
-    <script src="https://maps.googleapis.com/maps/api/js?key=AizaSyAftn7kB6TxdRyuN2uSK-c22J0TEcD0mjI&libraries=places" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6knJ89cKnbPtBeTEDZsDMQNp8gC4UWas&libraries=places" async defer></script>
     <input id="location" type="text" placeholder="Start typing location..." style="width: 100%; padding: 10px; font-size: 16px;">
 
     <script>
