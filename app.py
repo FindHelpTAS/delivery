@@ -1,6 +1,4 @@
-import os
 import streamlit as st
-import requests
 
 # Title for the Streamlit app
 st.title("Service Options")
@@ -64,12 +62,14 @@ if outreach:
         }
 
         // Load autocomplete when Google API is ready, with error checking
-        if (typeof google !== 'undefined' && google.maps && google.maps.places) {
-            google.maps.event.addDomListener(window, 'load', initAutocomplete);
-        } else {
-            console.error("Google Maps JavaScript API not loaded. Please check your API key and internet connection.");
-            alert("Failed to load Google Maps API. Please check the console for more details.");
-        }
+        document.addEventListener("DOMContentLoaded", function() {
+            if (typeof google !== 'undefined' && google.maps && google.maps.places) {
+                initAutocomplete();
+            } else {
+                console.error("Google Maps JavaScript API not loaded. Please check your API key and internet connection.");
+                alert("Failed to load Google Maps API. Please check the console for more details.");
+            }
+        });
     </script>
     """
     st.components.v1.html(html_code, height=150)
